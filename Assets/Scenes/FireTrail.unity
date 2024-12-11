@@ -4076,13 +4076,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590187211}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290c6dc0a660f974891c77cc2010e592, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ee6b59e24659c2419cb582cc382d04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireEffect: {fileID: 2098885375}
-  smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
 --- !u!1 &1640378541
 GameObject:
   m_ObjectHideFlags: 0
