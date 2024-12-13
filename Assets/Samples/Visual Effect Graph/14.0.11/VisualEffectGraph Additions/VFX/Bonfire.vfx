@@ -5678,7 +5678,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.19446462392807008,"inTangent":0.576205849647522,"outTangent":0.576205849647522,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.770670473575592,"inTangent":0.576205849647522,"outTangent":0.576205849647522,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.009552001953125,"value":1.004150390625,"inTangent":0.6674566864967346,"outTangent":0.6674566864967346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.496734619140625,"value":1.9967803955078126,"inTangent":0.6674566864967346,"outTangent":0.6674566864967346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size Over Life

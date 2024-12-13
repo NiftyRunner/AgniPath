@@ -3,10 +3,11 @@ using UnityEngine.VFX;
 
 public class ExtinguishFire : MonoBehaviour
 {
-    [SerializeField] VisualEffect fireEffect;
+    VisualEffect fireEffect;
 
     bool isSmokePlayed;
     [SerializeField] GameObject smokePrefab;
+    [SerializeField] Vector3 smokeScale;
     GameObject smokeInstance;
     ParticleSystem smokeParticles;
 
@@ -16,6 +17,7 @@ public class ExtinguishFire : MonoBehaviour
         fireEffect = GetComponent<VisualEffect>();
         smokeInstance = Instantiate(smokePrefab, fireEffect.transform.position, fireEffect.transform.rotation); //If smoke rotation is off check here
         smokeParticles = smokeInstance.GetComponent<ParticleSystem>();
+        smokeInstance.transform.localScale = smokeScale;
         fireEffect.Play();
     }
 
