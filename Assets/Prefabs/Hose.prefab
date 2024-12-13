@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3703777801040261706}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.95566803, z: 0.29444632, w: 0}
+  m_LocalRotation: {x: 0, y: 0.95566726, z: 0.29444897, w: 0}
   m_LocalPosition: {x: 1.536, y: 0.414, z: 0.298}
-  m_LocalScale: {x: 0.10140637, y: 0.10140637, z: 0.050795466}
+  m_LocalScale: {x: 0.37119803, y: 0.37119803, z: 0.18593681}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1235362342934394225}
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 52918c2469b927b41891aa85065de514, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -379,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: ShapeModule.angle
-      value: 6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: moveWithTransform
@@ -503,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: TrailModule.sizeAffectsLifetime
@@ -527,11 +527,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2915025492786356543, guid: 824ec8405450e0945bd8cc41b0900e18, type: 3}
       propertyPath: RotationBySpeedModule.curve.scalar
