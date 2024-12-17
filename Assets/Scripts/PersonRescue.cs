@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -30,6 +29,8 @@ public class PersonRescue : MonoBehaviour
             increaseTimer = false;
             timer = 1f;
             timerText.text = "";
+            Destroy(this.gameObject);
+            
         }
     }
 

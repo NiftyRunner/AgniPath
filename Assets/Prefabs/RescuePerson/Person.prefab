@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3317323696855562015}
   - component: {fileID: 3444870178317997627}
   - component: {fileID: 689640147671904621}
-  - component: {fileID: 2475267409060063782}
   - component: {fileID: 606678002631941524}
   m_Layer: 0
   m_Name: Hand
@@ -107,21 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2475267409060063782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657600140602002971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc06e39f06be0a4195f21cc78c4eb6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 5612625993301726906}
-  timeToHold: 3.5
-  timer: 0
 --- !u!114 &606678002631941524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +175,7 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2475267409060063782}
+      - m_Target: {fileID: 4261863278005207134}
         m_TargetAssemblyTypeName: PersonRescue, Assembly-CSharp
         m_MethodName: TouchedHands
         m_Mode: 1
@@ -206,7 +190,7 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2475267409060063782}
+      - m_Target: {fileID: 4261863278005207134}
         m_TargetAssemblyTypeName: PersonRescue, Assembly-CSharp
         m_MethodName: ReleasedHands
         m_Mode: 1
@@ -496,6 +480,7 @@ GameObject:
   - component: {fileID: 7681530796687529716}
   - component: {fileID: 6126043716826513686}
   - component: {fileID: 2011926890871490151}
+  - component: {fileID: 4261863278005207134}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -593,3 +578,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4261863278005207134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889985787985674095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc06e39f06be0a4195f21cc78c4eb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 5612625993301726906}
+  timeToHold: 3.5
+  timer: 1
