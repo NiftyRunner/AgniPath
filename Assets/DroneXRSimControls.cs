@@ -53,6 +53,15 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Value"",
+                    ""id"": ""611e7d11-a2cd-4b17-ba6f-5f677c914586"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,17 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""86637fc9-9262-44bc-94f6-8dfa9f8db757"",
+                    ""path"": ""<XRController>{LeftHand}/Primary2DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""Arrow"",
                     ""id"": ""12dea8fd-ea0a-4d9f-ba68-0ec14fc5ddfe"",
                     ""path"": ""1DAxis"",
@@ -145,6 +165,17 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""c1064a7a-16db-4144-8a0a-a7c1e0b78e2d"",
+                    ""path"": ""<XRController>{RightHand}/Primary2DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""Arrows(Up/Down)"",
                     ""id"": ""5bd80ced-fe40-4a72-a95a-a7bcc456e1f2"",
                     ""path"": ""1DAxis"",
@@ -176,6 +207,61 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                     ""action"": ""Height"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Up/Down"",
+                    ""id"": ""27777b1b-ab32-4933-b6db-b435d3f9ec31"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Height"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""14280676-6046-4daa-9ead-4f14e9b64bff"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Height"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""07d944d9-64aa-4817-be1f-daca1a3d7286"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Height"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""192de6a6-b2da-49de-a4ab-016090d94898"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e0433b9-bfdf-4b8a-b731-62df4d6fb0c4"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +273,7 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
         m_DroneControls_Move = m_DroneControls.FindAction("Move", throwIfNotFound: true);
         m_DroneControls_Turn = m_DroneControls.FindAction("Turn", throwIfNotFound: true);
         m_DroneControls_Height = m_DroneControls.FindAction("Height", throwIfNotFound: true);
+        m_DroneControls_Fire = m_DroneControls.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +338,7 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_DroneControls_Move;
     private readonly InputAction m_DroneControls_Turn;
     private readonly InputAction m_DroneControls_Height;
+    private readonly InputAction m_DroneControls_Fire;
     public struct DroneControlsActions
     {
         private @DroneXRSimControls m_Wrapper;
@@ -258,6 +346,7 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_DroneControls_Move;
         public InputAction @Turn => m_Wrapper.m_DroneControls_Turn;
         public InputAction @Height => m_Wrapper.m_DroneControls_Height;
+        public InputAction @Fire => m_Wrapper.m_DroneControls_Fire;
         public InputActionMap Get() { return m_Wrapper.m_DroneControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -276,6 +365,9 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
             @Height.started += instance.OnHeight;
             @Height.performed += instance.OnHeight;
             @Height.canceled += instance.OnHeight;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(IDroneControlsActions instance)
@@ -289,6 +381,9 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
             @Height.started -= instance.OnHeight;
             @Height.performed -= instance.OnHeight;
             @Height.canceled -= instance.OnHeight;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(IDroneControlsActions instance)
@@ -311,5 +406,6 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnHeight(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }

@@ -108,7 +108,7 @@ namespace NiFTY
             HandlePropellers();
         }
 
-        void HandlePropellers()
+        public void HandlePropellers()
         {
             if (!propeller)
             { return; }

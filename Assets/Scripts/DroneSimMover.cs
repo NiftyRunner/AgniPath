@@ -1,3 +1,6 @@
+using NiFTY;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,16 +10,20 @@ public class DroneSimMover : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
     [SerializeField] float heightSpeed;
+    [SerializeField] ParticleSystem waterParticles;
+    [SerializeField] List<DroneEngine> engines;
 
     Rigidbody rb;
 
     Vector2 moveDirection;
     float turnDirection;
     float heightDirection;
+    float waterEnable;
 
     InputAction move;
     InputAction turn;
     InputAction height;
+    InputAction fireWater;
 
     private void Awake()
     {
@@ -29,10 +36,12 @@ public class DroneSimMover : MonoBehaviour
         move = droneControls.DroneControls.Move;
         turn = droneControls.DroneControls.Turn;
         height = droneControls.DroneControls.Height;
+        fireWater = droneControls.DroneControls.Fire;
 
         move.Enable();
         turn.Enable();
         height.Enable();
+        fireWater.Enable();
     }
 
     private void OnDisable()
@@ -40,6 +49,7 @@ public class DroneSimMover : MonoBehaviour
         move.Disable();
         turn.Disable();
         height.Disable();
+        fireWater.Disable();
     }
 
     private void Update()
@@ -47,6 +57,7 @@ public class DroneSimMover : MonoBehaviour
         moveDirection = move.ReadValue<Vector2>();
         turnDirection = turn.ReadValue<float>();
         heightDirection = height.ReadValue<float>();
+        waterEnable = fireWater.ReadValue<float>();
     }
 
     private void FixedUpdate()
@@ -54,6 +65,28 @@ public class DroneSimMover : MonoBehaviour
         DroneMove();
         DroneTurn();
         DroneHeight();
+        DroneWaterControl();
+        EngineRotator();
+    }
+
+    private void EngineRotator()
+    {
+        foreach (var engine in engines)
+        {
+            engine.HandlePropellers();
+        }
+    }
+
+    private void DroneWaterControl()
+    {
+        if (waterEnable != 0f)
+        {
+            waterParticles.Play();
+        }
+        else
+        {
+            waterParticles.Stop();
+        }
     }
 
     private void DroneMove()

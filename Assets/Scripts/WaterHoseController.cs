@@ -23,9 +23,12 @@ public class WaterHoseController : MonoBehaviour
 
     public void ResetPosition()
     {
-        currentHoseTransform = defaultHoseTransform;
-        this.transform.position = defaultHoseTransform.position;
-        this.transform.rotation = defaultHoseTransform.rotation;
+        if (defaultHoseTransform != null)
+        {
+            currentHoseTransform = defaultHoseTransform;
+            this.transform.position = defaultHoseTransform.position;
+            this.transform.rotation = defaultHoseTransform.rotation;
+        }
     }
 
 }
