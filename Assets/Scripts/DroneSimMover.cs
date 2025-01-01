@@ -91,7 +91,11 @@ public class DroneSimMover : MonoBehaviour
 
     private void DroneMove()
     {
-        rb.velocity = new Vector3(-moveDirection.x * moveSpeed, rb.velocity.y , -moveDirection.y * moveSpeed);
+        Vector3 localMovement = new Vector3(moveDirection.x, 0, moveDirection.y);
+        Vector3 worldMovement = transform.TransformDirection(localMovement);
+
+        // Set the Rigidbody's velocity based on the transformed direction
+        rb.velocity = new Vector3(worldMovement.x * moveSpeed, rb.velocity.y, worldMovement.z * moveSpeed);
     }
 
     private void DroneTurn()

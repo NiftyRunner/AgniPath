@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerWindowPart : MonoBehaviour
 {
     [SerializeField] GameObject city;
-    [SerializeField] List<SmoothRotation> windowsToRotate;
+    [SerializeField] List<SmoothRotation> windowsToRotate; 
 
     void Start()
     {
