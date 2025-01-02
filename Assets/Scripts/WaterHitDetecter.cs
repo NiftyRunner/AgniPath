@@ -7,6 +7,7 @@ public class WaterHitDetecter : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("Particle Collision"+other.name);
         if (other.CompareTag("Fire"))
         {
             hitFire = other.GetComponent<ExtinguishFire>();

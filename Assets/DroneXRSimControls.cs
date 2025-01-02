@@ -222,7 +222,7 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""14280676-6046-4daa-9ead-4f14e9b64bff"",
-                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -233,7 +233,7 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""07d944d9-64aa-4817-be1f-daca1a3d7286"",
-                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -255,7 +255,18 @@ public partial class @DroneXRSimControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9e0433b9-bfdf-4b8a-b731-62df4d6fb0c4"",
-                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e8caf4f-be1b-4f59-83eb-f38b62042364"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
