@@ -474,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 0, y: 0, z: 0}
+  extinguishClip: {fileID: 0}
 --- !u!65 &206794264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 0, y: 0, z: 0}
+  extinguishClip: {fileID: 0}
 --- !u!65 &493289925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3762,6 +3764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 0, y: 0, z: 0}
+  extinguishClip: {fileID: 0}
 --- !u!65 &1548905711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10675,6 +10678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: room
       objectReference: {fileID: 0}
+    - target: {fileID: 1484231808453549202, guid: 2ecde411775e55a4aa41dfefe1df076f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2493366135404394385, guid: 2ecde411775e55a4aa41dfefe1df076f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.46
@@ -12142,6 +12149,10 @@ PrefabInstance:
     - target: {fileID: 2497721122568793917, guid: 84e7daadeecdfef44bd4f37a6b698c04, type: 3}
       propertyPath: m_Name
       value: City
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497721122568793917, guid: 84e7daadeecdfef44bd4f37a6b698c04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3635584922288991000, guid: 84e7daadeecdfef44bd4f37a6b698c04, type: 3}
       propertyPath: m_LocalPosition.x
