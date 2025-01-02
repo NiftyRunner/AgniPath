@@ -7,7 +7,6 @@ TagManager:
   - Water
   - Fire
   - Hands
-  - NewFire
   layers:
   - Default
   - TransparentFX
