@@ -9,30 +9,34 @@ public class ExtinguishFire : MonoBehaviour
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Vector3 smokeScale;
     [SerializeField] AudioClip extinguishClip;
-    AudioSource extinguishSource;
+    [SerializeField] ParticleSystem newFire;
+    [SerializeField] AudioSource extinguishSource;
     GameObject smokeInstance;
     ParticleSystem smokeParticles;
 
     private void Start()
     {
         isSmokePlayed = false;
+        extinguishSource = GetComponentInChildren<AudioSource>();
+        newFire = GetComponentInChildren<ParticleSystem>();
         fireEffect = GetComponent<VisualEffect>();
-        extinguishSource = GetComponent<AudioSource>();
         smokeInstance = Instantiate(smokePrefab, fireEffect.transform.position, fireEffect.transform.rotation); //If smoke rotation is off check here
         smokeParticles = smokeInstance.GetComponent<ParticleSystem>();
         smokeInstance.transform.localScale = smokeScale;
         fireEffect.Play();
         extinguishSource.Play();
+        newFire.Play();
     }
 
 
     public void ExtingushFire()
     {
-        fireEffect.SetFloat("Smoke Rate", 0f);
-        fireEffect.SetFloat("Flames Rate", 0f);
-        fireEffect.SetFloat("Sparks Rate", 0f);
-        fireEffect.SetFloat("Spark Burst Rate Max", 0f);
-        fireEffect.SetFloat("Spark Burst Rate Min", 0f);
+        newFire.Stop();
+        //fireEffect.SetFloat("Smoke Rate", 0f);
+        //fireEffect.SetFloat("Flames Rate", 0f);
+        //fireEffect.SetFloat("Sparks Rate", 0f);
+        //fireEffect.SetFloat("Spark Burst Rate Max", 0f);
+        //fireEffect.SetFloat("Spark Burst Rate Min", 0f);
         extinguishSource.Stop();
         if (smokeParticles != null && !isSmokePlayed) 
         {
