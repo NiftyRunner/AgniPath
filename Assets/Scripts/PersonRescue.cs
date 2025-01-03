@@ -1,57 +1,44 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class PersonRescue : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float timeToHold = 3f;
-    [SerializeField] float timer;
-    AudioSource personSource;
-    bool increaseTimer;
+    public static PersonRescue Instance; // Singleton for global access
+
+    [SerializeField] private TextMeshProUGUI destroyedCountText; // Reference to the UI text
+    private int destroyedCount;
 
     private void Awake()
     {
-        personSource = GetComponent<AudioSource>();
-    }
-
-    void Start()
-    {
-        personSource.Play();
-        timer = 1f;
-        increaseTimer = false;
-        timerText.text = "";
-    }
-
-    private void Update()
-    {
-        if (increaseTimer)
+        // Ensure only one instance exists
+        if (Instance == null)
         {
-            timer += Time.deltaTime;
-            timerText.text = Mathf.FloorToInt(timer % 60f).ToString();
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Persist across scenes
         }
-
-        if (timer >= timeToHold)
+        else
         {
-            Debug.Log("Person Rescued");
-            increaseTimer = false;
-            timer = 1f;
-            timerText.text = "";
-            personSource.Stop();
-            Destroy(this.gameObject);
-            
+            Destroy(gameObject);
         }
     }
 
-    public void TouchedHands()
+    private void Start()
     {
-        increaseTimer = true;
+        destroyedCount = 0; // Initialize count to 0
+        UpdateUI(); // Display the initial count on the UI
     }
 
-    public void ReleasedHands()
+    public void IncrementDestroyedCount()
     {
-       increaseTimer = false;
-       timer = 1f;
-       timerText.text = "";
+        destroyedCount++; // Increment the count
+        UpdateUI(); // Update the displayed value
     }
 
+    private void UpdateUI()
+    {
+        if (destroyedCountText != null)
+        {
+            destroyedCountText.text = destroyedCount.ToString(); // Display only the count (starting from 0)
+        }
+    }
 }
