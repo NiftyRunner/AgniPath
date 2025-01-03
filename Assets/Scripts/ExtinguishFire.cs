@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -6,6 +7,9 @@ public class ExtinguishFire : MonoBehaviour
     VisualEffect fireEffect;
 
     bool isSmokePlayed;
+    [SerializeField] static int fireCount;
+    [SerializeField] int totalFireCount;
+    [SerializeField] TextMeshProUGUI fireCountText;
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Vector3 smokeScale;
     [SerializeField] AudioClip extinguishClip;
@@ -15,6 +19,8 @@ public class ExtinguishFire : MonoBehaviour
 
     private void Start()
     {
+        fireCount = 0;
+        fireCountText.text = "0/"+totalFireCount;
         isSmokePlayed = false;
         fireEffect = GetComponent<VisualEffect>();
         extinguishSource = GetComponent<AudioSource>();
@@ -36,6 +42,8 @@ public class ExtinguishFire : MonoBehaviour
         extinguishSource.Stop();
         if (smokeParticles != null && !isSmokePlayed) 
         {
+            fireCount++;
+            fireCountText.text = fireCount.ToString() + "/"+ totalFireCount;
             smokeParticles.Play();
             extinguishSource.PlayOneShot(extinguishClip);
             Destroy(smokeInstance, smokeParticles.main.duration + smokeParticles.main.startLifetime.constantMax);
