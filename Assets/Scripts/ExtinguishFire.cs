@@ -7,7 +7,7 @@ public class ExtinguishFire : MonoBehaviour
     VisualEffect fireEffect;
 
     bool isSmokePlayed;
-    [SerializeField] static int fireCount;
+    public static int fireCount;
     [SerializeField] int totalFireCount;
     [SerializeField] TextMeshProUGUI fireCountText;
     [SerializeField] GameObject smokePrefab;
