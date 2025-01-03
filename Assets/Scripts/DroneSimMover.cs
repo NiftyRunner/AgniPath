@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 public class DroneSimMover : MonoBehaviour
 {
@@ -55,7 +56,14 @@ public class DroneSimMover : MonoBehaviour
     private void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
-        turnDirection = turn.ReadValue<float>();
+        if (IsXRDeviceSimulated())
+        {
+            turnDirection = turn.ReadValue<float>(); // Read as float for XR simulation
+        }
+        else
+        {
+            turnDirection = turn.ReadValue<Vector2>().x; // Read as Vector2 and extract x-axis for other devices
+        }
         heightDirection = height.ReadValue<float>();
         waterEnable = fireWater.ReadValue<float>();
     }
@@ -106,5 +114,23 @@ public class DroneSimMover : MonoBehaviour
     private void DroneHeight()
     {
         rb.velocity = new Vector3(rb.velocity.x, heightDirection * heightSpeed, rb.velocity.z);
+    }
+
+    private bool IsXRDeviceSimulated()
+    {
+        // Check all active input devices
+        var devices = InputSystem.devices;
+
+        foreach (var device in devices)
+        {
+            // If an XRSimulatedController is detected, return true
+            if (device is XRSimulatedController)
+            {
+                return true;
+            }
+        }
+
+        // No XRSimulatedController found, return false
+        return false;
     }
 }
