@@ -7,7 +7,7 @@ public class LadderController : MonoBehaviour
     [Header("Ladder Objects")]
     [SerializeField] Transform platform;
     [SerializeField] Transform ladderBase;
-    [SerializeField] Transform[] ladderExtensions;
+    [SerializeField] Transform ladderExtension;
 
     [Header("Movement Values")]
     [SerializeField] float heightStep = 0.5f;
@@ -16,12 +16,15 @@ public class LadderController : MonoBehaviour
     [SerializeField] float extensionLength = 1f; // Length of each extension
     [SerializeField] float rotationSpeed = 2f;
 
+    Vector3 currentDirection;
     float currentHeight;
 
     private void Start()
     {
+        currentDirection = transform.localPosition;
         currentHeight = platform.position.y;
         minHeight = currentHeight;
+        GoUp();
     }
 
     public void GoUp()
@@ -44,39 +47,51 @@ public class LadderController : MonoBehaviour
         }
     }
 
+    //private void UpdateLadder()
+    //{
+
+    //    Vector3 previousDirection = currentDirection;
+
+    //    // Calculate the direction vector between the platform and the ladder base
+    //    Vector3 direction = platform.position - ladderBase.position;
+    //    Debug.Log(direction);
+    //    float heightDifference = direction.y;
+    //    //Debug.Log(heightDifference);
+    //    float lengthDifference = direction.z;
+
+    //    currentDirection = direction;
+
+    //    Vector3 distanceDifference = currentDirection - previousDirection;
+    //    Debug.Log(distanceDifference);
+    //    ladderExtension.position = new Vector3(ladderExtension.position.x + distanceDifference.x, ladderExtension.position.y + distanceDifference.y, ladderExtension.position.z + distanceDifference.z);
+
+    //    ladderBase.LookAt(platform.position);
+    //}
+
     private void UpdateLadder()
     {
-        // Calculate the direction vector between the platform and the ladder base
+        // Calculate the direction vector from the ladder base to the platform
         Vector3 direction = platform.position - ladderBase.position;
-        Debug.Log(direction);
-        float heightDifference = direction.y;
-        float lengthDifference = -direction.z;
 
+        // Get the distance between the ladder base and the platform
+        float distance = direction.magnitude;
+
+        // Normalize the direction vector to ensure consistent alignment
+        Vector3 normalizedDirection = direction.normalized;
+
+        // Position the ladder extension to start at the ladder base
+        ladderExtension.position = ladderBase.position;
+
+        // Move the ladder extension forward along the normalized direction to cover the gap
+        ladderExtension.position += normalizedDirection * (distance - extensionLength);
+
+        // Rotate the ladder extension to align with the direction to the platform
+        ladderExtension.LookAt(platform.position);
+
+        // Align the base to face the platform
         ladderBase.LookAt(platform.position);
-
-        // Calculate the angle the ladder needs to rotate to point towards the platform
-        //float targetAngle = Mathf.Atan2(heightDifference, lengthDifference) * Mathf.Rad2Deg;
-
-        //// Smoothly rotate the ladder base to the target angle
-        //Quaternion targetRotation = Quaternion.Euler(targetAngle, 0, 0);
-        //ladderBase.rotation = Quaternion.Lerp(ladderBase.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        // Adjust ladder extension positions
-        //for (int i = 0; i < ladderExtensions.Length; i++)
-        //{
-        //    Transform extension = ladderExtensions[i];
-
-        //    // Position each extension at a proportional distance
-        //    float segmentHeight = (i + 1) * extensionLength;
-        //    if (segmentHeight <= heightDifference)
-        //    {
-        //        extension.gameObject.SetActive(true);
-        //        extension.localPosition = new Vector3(0, segmentHeight, 0); // Align along the y-axis
-        //    }
-        //    else
-        //    {
-        //        extension.gameObject.SetActive(false); // Hide extensions that exceed the height
-        //    }
-        //}
     }
+
+
+
 }
