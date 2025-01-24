@@ -7,12 +7,20 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 public class DroneSimMover : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] Transform droneBody;
     [SerializeField] DroneXRSimControls droneControls;
+    [SerializeField] ParticleSystem waterParticles;
+    [SerializeField] List<DroneEngine> engines;
+
+
+    [Header("Properties")]
     [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
     [SerializeField] float heightSpeed;
-    [SerializeField] ParticleSystem waterParticles;
-    [SerializeField] List<DroneEngine> engines;
+    [SerializeField] float tiltAmount;
+    [SerializeField] float rotationSpeed;
+
 
     Rigidbody rb;
 
@@ -104,6 +112,20 @@ public class DroneSimMover : MonoBehaviour
 
         // Set the Rigidbody's velocity based on the transformed direction
         rb.velocity = new Vector3(worldMovement.x * moveSpeed, rb.velocity.y, worldMovement.z * moveSpeed);
+        if (localMovement.sqrMagnitude > 0.01f) // Threshold to avoid tiny inputs
+        {
+            // Tilt the drone based on X and Z movement
+            float tiltX = localMovement.z * tiltAmount; // Tilt forward/backward based on Z movement
+            float tiltZ = -localMovement.x * tiltAmount;  // Tilt sideways based on X movement
+
+            Quaternion targetRotation = Quaternion.Euler(tiltX, 0, tiltZ);
+            droneBody.localRotation = Quaternion.Lerp(droneBody.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            // Smoothly return to default rotation when idle
+            droneBody.localRotation = Quaternion.Lerp(droneBody.localRotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+        }
     }
 
     private void DroneTurn()
