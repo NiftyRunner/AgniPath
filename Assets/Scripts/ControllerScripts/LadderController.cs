@@ -14,10 +14,13 @@ public class LadderController : MonoBehaviour
     [SerializeField] float maxHeight = 10f;
     [SerializeField] float minHeight = 0f;
     [SerializeField] float extensionLength = 1f; // Length of each extension
-    [SerializeField] float rotationSpeed = 2f;
+    [SerializeField] float upDownSpeed = 2f;
 
     Vector3 currentDirection;
     float currentHeight;
+
+    bool goingUp;
+    bool goingDown;
 
     private void Start()
     {
@@ -27,11 +30,45 @@ public class LadderController : MonoBehaviour
         GoUp();
     }
 
+    private void FixedUpdate()
+    {
+        if (goingUp)
+        {
+            GoUp();
+        }
+
+        if (goingDown)
+        {
+            GoDown();
+        }
+
+    }
+
+    public void SetGoingUp()
+    {
+        goingUp = true;
+    }
+
+    public void UnsetGoingUp()
+    {
+        goingUp = false;
+    }
+
+    public void SetGoingDown()
+    {
+        goingDown = true;
+    }
+
+    public void UnsetGoingDown()
+    {
+        goingDown = false;
+    }
+
     public void GoUp()
     {
         if (currentHeight < maxHeight)
         {
-            currentHeight += heightStep * Time.deltaTime;
+            currentHeight += heightStep * Time.deltaTime * upDownSpeed;
             platform.position = new Vector3(platform.position.x, currentHeight, platform.position.z);
             UpdateLadder();
         }
@@ -41,7 +78,7 @@ public class LadderController : MonoBehaviour
     {
         if (currentHeight > minHeight)
         {
-            currentHeight -= heightStep * Time.deltaTime;
+            currentHeight -= heightStep * Time.deltaTime * upDownSpeed;
             platform.position = new Vector3(platform.position.x, currentHeight, platform.position.z);
             UpdateLadder();
         }
