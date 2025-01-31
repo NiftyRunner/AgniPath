@@ -13,6 +13,8 @@ public class ExtinguishFire : MonoBehaviour
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Vector3 smokeScale;
     [SerializeField] AudioClip extinguishClip;
+
+    BoxCollider fireCollider;
     AudioSource extinguishSource;
     GameObject smokeInstance;
     ParticleSystem smokeParticles;
@@ -20,7 +22,10 @@ public class ExtinguishFire : MonoBehaviour
     private void Start()
     {
         fireCount = 0;
-        fireCountText.text = "0/"+totalFireCount;
+        
+        if (fireCountText != null) { fireCountText.text = "0/" + totalFireCount; }
+        else { Debug.Log("FireText ref not set"); }
+
         isSmokePlayed = false;
         fireEffect = GetComponent<VisualEffect>();
         extinguishSource = GetComponent<AudioSource>();
@@ -29,6 +34,10 @@ public class ExtinguishFire : MonoBehaviour
         smokeInstance.transform.localScale = smokeScale;
         fireEffect.Play();
         extinguishSource.Play();
+        if(extinguishSource == null) { Debug.Log("Extinguish source is null"); }
+
+        fireCollider = GetComponent<BoxCollider>();
+        fireCollider.enabled = true;
     }
 
 
@@ -43,11 +52,21 @@ public class ExtinguishFire : MonoBehaviour
         if (smokeParticles != null && !isSmokePlayed) 
         {
             fireCount++;
-            fireCountText.text = fireCount.ToString() + "/"+ totalFireCount;
+
+            if (fireCountText != null)
+            { fireCountText.text = fireCount.ToString() + "/" + totalFireCount; }
+                
             smokeParticles.Play();
             extinguishSource.PlayOneShot(extinguishClip);
             Destroy(smokeInstance, smokeParticles.main.duration + smokeParticles.main.startLifetime.constantMax);
             isSmokePlayed=true;
+            Invoke("DisableCollider", smokeParticles.main.startLifetime.constantMax);
         }
+        
+    }
+
+    void DisableCollider()
+    {
+        fireCollider.enabled = false;
     }
 }

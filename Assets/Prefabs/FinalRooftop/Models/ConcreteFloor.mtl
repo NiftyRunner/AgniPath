@@ -1,0 +1,18 @@
+# Blender 4.3.1 MTL File: 'RooftopEntrance.blend'
+# www.blender.org
+
+newmtl Material
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd C:/Users/Lenovo/Desktop/RooftopEntrance/textures/hangar_concrete_floor_diff_4k.jpg
+map_Pr C:/Users/Lenovo/Desktop/RooftopEntrance/textures/hangar_concrete_floor_rough_4k.exr
+map_Bump -bm 0.200000 C:/Users/Lenovo/Desktop/RooftopEntrance/textures/hangar_concrete_floor_nor_dx_4k.exr

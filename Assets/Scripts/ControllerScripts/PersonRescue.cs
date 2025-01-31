@@ -14,7 +14,8 @@ public class PersonRescue : MonoBehaviour
     private void Awake()
     {
         rescueCount = 0;
-        rescueText.text = "0/2";
+        if (rescueText != null) { rescueText.text = "0/2"; }
+        else { Debug.Log("Rescue text ref not set"); }
         personSource = GetComponent<AudioSource>();
     }
 
@@ -42,7 +43,8 @@ public class PersonRescue : MonoBehaviour
             timerText.text = "";
             personSource.Stop();
             rescueCount++;
-            rescueText.text = rescueCount.ToString() + "/2";
+            if (rescueText != null)
+            { rescueText.text = rescueCount.ToString() + "/2"; }
             Destroy(this.gameObject);
             
         }
