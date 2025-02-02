@@ -10,7 +10,8 @@ public class DroneSimMover : MonoBehaviour
     [Header("References")]
     [SerializeField] Transform droneBody;
     [SerializeField] DroneXRSimControls droneControls;
-    [SerializeField] ParticleSystem waterParticles;
+    [SerializeField] ParticleSystem waterParticlesTPP;
+    [SerializeField] ParticleSystem waterParticlesFPP;
     [SerializeField] List<DroneEngine> engines;
 
 
@@ -21,6 +22,9 @@ public class DroneSimMover : MonoBehaviour
     [SerializeField] float tiltAmount;
     [SerializeField] float rotationSpeed;
 
+    [Header("Bools")]
+    public bool isTPP;
+    public bool isFPP;
 
     Rigidbody rb;
 
@@ -63,6 +67,8 @@ public class DroneSimMover : MonoBehaviour
 
     private void Update()
     {
+
+
         moveDirection = move.ReadValue<Vector2>();
         if (IsXRDeviceSimulated())
         {
@@ -95,13 +101,18 @@ public class DroneSimMover : MonoBehaviour
 
     private void DroneWaterControl()
     {
-        if (waterEnable != 0f)
+        if (waterEnable != 0f && isTPP)
         {
-            waterParticles.Play();
+            waterParticlesTPP.Play();
+        }
+        else if(waterEnable != 0f && isFPP)
+        {
+            waterParticlesFPP.Play();
         }
         else
         {
-            waterParticles.Stop();
+            waterParticlesTPP.Stop();
+            waterParticlesFPP.Stop();
         }
     }
 
