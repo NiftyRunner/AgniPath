@@ -8,6 +8,7 @@ public class PersonRescue : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float timeToHold = 3f;
     [SerializeField] float timer;
+    [SerializeField] Animator personAnimator;
     AudioSource personSource;
     bool increaseTimer;
 
@@ -53,6 +54,8 @@ public class PersonRescue : MonoBehaviour
     public void TouchedHands()
     {
         increaseTimer = true;
+        //Place your animation start script here.
+        Debug.Log("Play rescue animation");
     }
 
     public void ReleasedHands()
