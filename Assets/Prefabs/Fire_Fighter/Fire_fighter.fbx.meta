@@ -3,12 +3,47 @@ guid: 5ab582b42af70c54b9ccf4f529ee360d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_Hair
+    second: {fileID: 2100000, guid: 34e7fe252ae282f4dbbe5f4d2625d1d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_Helmet
+    second: {fileID: 2100000, guid: 04c2040b9237e1a4fac1bab0da572234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_Pants
+    second: {fileID: 2100000, guid: 5000ae8a5490e8c489c406f12f7c7d38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_body
+    second: {fileID: 2100000, guid: 436c9ac4d4f872a408de4fc84b5f1a3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_boots
+    second: {fileID: 2100000, guid: c649315b9c476f7418cef2d6fe489687, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_shirt
+    second: {fileID: 2100000, guid: 8c87187edaadbcb4c9b32798aec0dfb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch17_vest
+    second: {fileID: 2100000, guid: 895130f69b996354a8c87e5446a768b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
