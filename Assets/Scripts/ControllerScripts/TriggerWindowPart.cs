@@ -5,15 +5,12 @@ using UnityEngine;
 public class TriggerWindowPart : MonoBehaviour
 {
     [SerializeField] GameObject city;
-    [SerializeField] List<SmoothRotation> windowsToRotate; 
+    [SerializeField] List<Animator> windowsToRotate;
 
     void Start()
     {
         city.SetActive(false);
-        foreach (var window in windowsToRotate)
-        {
-            window.rotStart = false;
-        }
+        
     }
 
     public void StartWindowSequence()
@@ -21,7 +18,7 @@ public class TriggerWindowPart : MonoBehaviour
         city.SetActive(true);
         foreach (var window in windowsToRotate)
         {
-            window.rotStart = true;
+            window.SetTrigger("PlayerInteracted");
         }
     }
 }

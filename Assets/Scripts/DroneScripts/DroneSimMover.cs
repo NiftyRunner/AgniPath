@@ -13,6 +13,8 @@ public class DroneSimMover : MonoBehaviour
     [SerializeField] ParticleSystem waterParticlesTPP;
     [SerializeField] ParticleSystem waterParticlesFPP;
     [SerializeField] List<DroneEngine> engines;
+    [SerializeField] GameObject tppOrigin;
+    [SerializeField] GameObject fppOrigin;
 
 
     [Header("Properties")]
@@ -55,6 +57,21 @@ public class DroneSimMover : MonoBehaviour
         turn.Enable();
         height.Enable();
         fireWater.Enable();
+
+        if (isTPP)
+        {
+            tppOrigin.SetActive(true);
+            fppOrigin.SetActive(false);
+        }
+        else if (isFPP)
+        {
+            tppOrigin.SetActive(false);
+            fppOrigin.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("No bool selected");
+        }
     }
 
     private void OnDisable()
@@ -67,8 +84,6 @@ public class DroneSimMover : MonoBehaviour
 
     private void Update()
     {
-
-
         moveDirection = move.ReadValue<Vector2>();
         if (IsXRDeviceSimulated())
         {
@@ -165,5 +180,13 @@ public class DroneSimMover : MonoBehaviour
 
         // No XRSimulatedController found, return false
         return false;
+    }
+
+    public void SwitchPOV()
+    {
+        tppOrigin.SetActive(!tppOrigin);
+        isTPP = !tppOrigin;
+        fppOrigin.SetActive(tppOrigin);
+        isFPP = tppOrigin;
     }
 }

@@ -6,10 +6,10 @@ public class DronePOVManager : MonoBehaviour
 {
     bool isSwitched;
 
-    [Header("Camera Settings")]
-    [SerializeField] Transform droneCamera;
-    [SerializeField] Vector3 fpvPosition;
-    [SerializeField] Quaternion fpvRotation;
+    //[Header("Camera Settings")]
+    //[SerializeField] Transform droneCamera;
+    //[SerializeField] Vector3 fpvPosition;
+    //[SerializeField] Quaternion fpvRotation;
 
     [Header("Drone Position")]
     [SerializeField] Vector3 fpvAreaPosition;
@@ -18,10 +18,12 @@ public class DronePOVManager : MonoBehaviour
     [SerializeField] int extinguishableFireCount;
 
     FadeManager fadeManager;
+    DroneSimMover droneSimMover;
 
     private void Start()
     {
         fadeManager = FindAnyObjectByType<FadeManager>();
+        droneSimMover = FindAnyObjectByType<DroneSimMover>();
         isSwitched = false;
     }
 
@@ -38,7 +40,6 @@ public class DronePOVManager : MonoBehaviour
     public void SwitchToFPV()
     {
         transform.position = fpvAreaPosition;
-        droneCamera.localPosition = fpvPosition;
-        droneCamera.localRotation = fpvRotation;
+        droneSimMover.SwitchPOV();
     }
 }
