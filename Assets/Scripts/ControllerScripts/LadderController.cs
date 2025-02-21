@@ -8,45 +8,51 @@ public class LadderController : MonoBehaviour
     [SerializeField] Transform platform;
     [SerializeField] Transform ladderBase;
     [SerializeField] Transform ladderExtension;
+    [SerializeField] AudioSource platformSource;
 
     [Header("Movement Values")]
     [SerializeField] float heightStep = 0.5f;
     [SerializeField] float maxHeight = 10f;
     [SerializeField] float minHeight = 0f;
-    [SerializeField] float extensionLength = 1f; // Length of each extension
+    [SerializeField] float extensionLength = 1f;
     [SerializeField] float upDownSpeed = 2f;
 
-    Vector3 currentDirection;
     float currentHeight;
-
     bool goingUp;
     bool goingDown;
+    bool isMoving;
 
     private void Start()
     {
-        currentDirection = transform.localPosition;
         currentHeight = platform.position.y;
         minHeight = currentHeight;
-        GoUp();
+        isMoving = false;
     }
 
     private void FixedUpdate()
     {
-        if (goingUp)
+        if (goingUp && currentHeight < maxHeight)
         {
             GoUp();
         }
-
-        if (goingDown)
+        else if (goingDown && currentHeight > minHeight)
         {
             GoDown();
         }
-
+        else
+        {
+            StopAudio();
+        }
     }
 
     public void SetGoingUp()
     {
-        goingUp = true;
+        if (currentHeight < maxHeight)
+        {
+            goingUp = true;
+            goingDown = false;
+            PlayAudio();
+        }
     }
 
     public void UnsetGoingUp()
@@ -56,7 +62,12 @@ public class LadderController : MonoBehaviour
 
     public void SetGoingDown()
     {
-        goingDown = true;
+        if (currentHeight > minHeight)
+        {
+            goingDown = true;
+            goingUp = false;
+            PlayAudio();
+        }
     }
 
     public void UnsetGoingDown()
@@ -64,71 +75,60 @@ public class LadderController : MonoBehaviour
         goingDown = false;
     }
 
-    public void GoUp()
+    private void GoUp()
     {
         if (currentHeight < maxHeight)
         {
             currentHeight += heightStep * Time.deltaTime * upDownSpeed;
             platform.position = new Vector3(platform.position.x, currentHeight, platform.position.z);
             UpdateLadder();
+            isMoving = true;
+        }
+        else
+        {
+            StopAudio();
         }
     }
 
-    public void GoDown()
+    private void GoDown()
     {
         if (currentHeight > minHeight)
         {
             currentHeight -= heightStep * Time.deltaTime * upDownSpeed;
             platform.position = new Vector3(platform.position.x, currentHeight, platform.position.z);
             UpdateLadder();
+            isMoving = true;
+        }
+        else
+        {
+            StopAudio();
         }
     }
 
-    //private void UpdateLadder()
-    //{
+    private void StopAudio()
+    {
+        if (isMoving && platformSource.isPlaying)
+        {
+            platformSource.Stop();
+        }
+        isMoving = false;
+    }
 
-    //    Vector3 previousDirection = currentDirection;
-
-    //    // Calculate the direction vector between the platform and the ladder base
-    //    Vector3 direction = platform.position - ladderBase.position;
-    //    Debug.Log(direction);
-    //    float heightDifference = direction.y;
-    //    //Debug.Log(heightDifference);
-    //    float lengthDifference = direction.z;
-
-    //    currentDirection = direction;
-
-    //    Vector3 distanceDifference = currentDirection - previousDirection;
-    //    Debug.Log(distanceDifference);
-    //    ladderExtension.position = new Vector3(ladderExtension.position.x + distanceDifference.x, ladderExtension.position.y + distanceDifference.y, ladderExtension.position.z + distanceDifference.z);
-
-    //    ladderBase.LookAt(platform.position);
-    //}
+    private void PlayAudio()
+    {
+        if (!platformSource.isPlaying && (goingUp || goingDown))
+        {
+            platformSource.Play();
+        }
+    }
 
     private void UpdateLadder()
     {
-        // Calculate the direction vector from the ladder base to the platform
         Vector3 direction = platform.position - ladderBase.position;
-
-        // Get the distance between the ladder base and the platform
         float distance = direction.magnitude;
-
-        // Normalize the direction vector to ensure consistent alignment
         Vector3 normalizedDirection = direction.normalized;
-
-        // Position the ladder extension to start at the ladder base
-        ladderExtension.position = ladderBase.position;
-
-        // Move the ladder extension forward along the normalized direction to cover the gap
-        ladderExtension.position += normalizedDirection * (distance - extensionLength);
-
-        // Rotate the ladder extension to align with the direction to the platform
+        ladderExtension.position = ladderBase.position + normalizedDirection * (distance - extensionLength);
         ladderExtension.LookAt(platform.position);
-
-        // Align the base to face the platform
         ladderBase.LookAt(platform.position);
     }
-
-
-
 }

@@ -13,8 +13,8 @@ public class ExtinguishFire : MonoBehaviour
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Vector3 smokeScale;
     [SerializeField] AudioClip extinguishClip;
-
-    BoxCollider fireCollider;
+    [SerializeField] BoxCollider fireCollider;
+    
     AudioSource extinguishSource;
     GameObject smokeInstance;
     ParticleSystem smokeParticles;
