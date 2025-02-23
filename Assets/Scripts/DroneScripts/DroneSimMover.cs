@@ -34,16 +34,22 @@ public class DroneSimMover : MonoBehaviour
     float turnDirection;
     float heightDirection;
     float waterEnable;
+    float switchTriggered;
+    bool switchedCurrently;
+    FadeManager fadeManager;
 
     InputAction move;
     InputAction turn;
     InputAction height;
     InputAction fireWater;
+    InputAction switchPOV;
 
     private void Awake()
     {
+        fadeManager = FindAnyObjectByType<FadeManager>();
         rb = GetComponent<Rigidbody>();
         droneControls = new DroneXRSimControls();
+        switchedCurrently = false;
     }
 
     private void OnEnable()
@@ -52,11 +58,13 @@ public class DroneSimMover : MonoBehaviour
         turn = droneControls.DroneControls.Turn;
         height = droneControls.DroneControls.Height;
         fireWater = droneControls.DroneControls.Fire;
+        switchPOV = droneControls.DroneControls.SwitchPOV;
 
         move.Enable();
         turn.Enable();
         height.Enable();
         fireWater.Enable();
+        switchPOV.Enable();
 
         if (isTPP)
         {
@@ -80,6 +88,7 @@ public class DroneSimMover : MonoBehaviour
         turn.Disable();
         height.Disable();
         fireWater.Disable();
+        switchPOV.Disable();
     }
 
     private void Update()
@@ -95,6 +104,7 @@ public class DroneSimMover : MonoBehaviour
         }
         heightDirection = height.ReadValue<float>();
         waterEnable = fireWater.ReadValue<float>();
+        switchTriggered = switchPOV.ReadValue<float>();
     }
 
     private void FixedUpdate()
@@ -104,6 +114,51 @@ public class DroneSimMover : MonoBehaviour
         DroneHeight();
         DroneWaterControl();
         EngineRotator();
+        TriggerSwitch();
+    }
+
+    private void TriggerSwitch()
+    {
+        if (switchTriggered != 0f && !switchedCurrently)
+        {
+            switchedCurrently = true; // Prevent rapid switching
+            StartCoroutine(fadeManager.FadeInOutEffect());
+
+            if (isTPP)
+            {
+                Invoke(nameof(SwitchToFPP), 0.2f);
+            }
+            else if (isFPP)
+            {
+                Invoke(nameof(SwitchToTPP), 0.2f);
+            }
+
+            Invoke(nameof(ResetSwitch), 1f);
+        }
+    }
+
+    private void ResetSwitch()
+    {
+        switchedCurrently = false; // Allow switching again
+    }
+
+
+    private void SwitchToTPP()
+    {
+        isTPP = true;
+        isFPP = false;
+        switchedCurrently = true;
+        tppOrigin.SetActive(true);
+        fppOrigin.SetActive(false);
+    }
+
+    private void SwitchToFPP()
+    {
+        isTPP = false;
+        isFPP = true;
+        switchedCurrently = true;
+        tppOrigin.SetActive(false);
+        fppOrigin.SetActive(true);
     }
 
     private void EngineRotator()
@@ -182,11 +237,17 @@ public class DroneSimMover : MonoBehaviour
         return false;
     }
 
-    public void SwitchPOV()
+    void ChangeSwitchSetting()
     {
-        tppOrigin.SetActive(!tppOrigin);
-        isTPP = !tppOrigin;
-        fppOrigin.SetActive(tppOrigin);
-        isFPP = tppOrigin;
+        switchedCurrently = !switchedCurrently;
     }
+
+    //public void ChangePOV()
+    //{
+    //    StartCoroutine(fadeManager.FadeInOutEffect());
+    //    tppOrigin.SetActive(!tppOrigin);
+    //    isTPP = !tppOrigin;
+    //    fppOrigin.SetActive(tppOrigin);
+    //    isFPP = tppOrigin;
+    //}
 }

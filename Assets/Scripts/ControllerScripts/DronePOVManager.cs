@@ -17,6 +17,9 @@ public class DronePOVManager : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] int extinguishableFireCount;
 
+    //[Header("References")]
+    //[SerializeField] Animator cameraAnimator;
+
     FadeManager fadeManager;
     DroneSimMover droneSimMover;
 
@@ -27,19 +30,24 @@ public class DronePOVManager : MonoBehaviour
         isSwitched = false;
     }
 
-    private void Update()
-    {
-        if (ExtinguishFire.fireCount >= extinguishableFireCount && !isSwitched)
-        {
-            StartCoroutine(fadeManager.FadeInOutEffect());
-            SwitchToFPV();
-            isSwitched=true;
-        }
-    }
+    //private void Update()
+    //{
+    //    if (ExtinguishFire.fireCount >= extinguishableFireCount && !isSwitched)
+    //    {
+    //        StartCoroutine(fadeManager.FadeInOutEffect());
+    //        SwitchToFPV();
+    //        isSwitched=true;
+    //    }
+    //}
 
-    public void SwitchToFPV()
-    {
-        transform.position = fpvAreaPosition;
-        droneSimMover.SwitchPOV();
-    }
+    //public void SwitchPOV()
+    //{
+    //    //transform.position = fpvAreaPosition;
+    //    //droneSimMover.SwitchPOV();
+    //    StartCoroutine(fadeManager.FadeInOutEffect());
+
+
+    //}
+
+
 }

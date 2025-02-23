@@ -4,38 +4,33 @@ using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
 {
-    public Image fadeImage; // Reference to the full-screen UI Image for fade
-    public float fadeInDuration = 2f; // Time to fade in
-    public float fadeOutDuration = 2f; // Time to fade out
-    public float holdDuration = 1f; // Time to hold at fully opaque
+    public Image fadeImage;
+    public float defaultFadeInDuration = 2f;
+    public float defaultFadeOutDuration = 2f;
+    public float holdDuration = 1f;
 
-
-    public IEnumerator FadeInOutEffect()
+    public IEnumerator FadeInOutEffect(float? fadeInSpeed = null, float? fadeOutSpeed = null)
     {
-        // 1. Fade in (transparent to opaque)
-        yield return StartCoroutine(Fade(0f, 1f, fadeInDuration));
+        float fadeInTime = fadeInSpeed ?? defaultFadeInDuration;
+        float fadeOutTime = fadeOutSpeed ?? defaultFadeOutDuration;
 
-        // 2. Hold at fully opaque
+        yield return Fade(0f, 1f, fadeInTime);
         yield return new WaitForSeconds(holdDuration);
-
-        // 3. Fade out (opaque to transparent)
-        yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration));
+        yield return Fade(1f, 0f, fadeOutTime);
     }
 
-    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    public void StartFade(float fadeInSpeed, float fadeOutSpeed)
     {
-        float elapsedTime = 0f;
-        Color color = fadeImage.color;
+        StartCoroutine(FadeInOutEffect(fadeInSpeed, fadeOutSpeed));
+    }
 
-        while (elapsedTime < duration)
+    private IEnumerator Fade(float from, float to, float duration)
+    {
+        for (float t = 0; t < duration; t += Time.deltaTime)
         {
-            elapsedTime += Time.deltaTime;
-            color.a = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            fadeImage.color = color;
+            fadeImage.color = new Color(0, 0, 0, Mathf.Lerp(from, to, t / duration));
             yield return null;
         }
-
-        color.a = endAlpha; // Ensure the final alpha value is exact
-        fadeImage.color = color;
+        fadeImage.color = new Color(0, 0, 0, to);
     }
 }
