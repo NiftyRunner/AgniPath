@@ -9,6 +9,8 @@ public class PersonRescue : MonoBehaviour
     [SerializeField] float timeToHold = 3f;
     [SerializeField] float timer;
     [SerializeField] Animator personAnimator;
+    [SerializeField] LevelManager_Parth levelManager;
+
     AudioSource personSource;
     bool increaseTimer;
 
@@ -38,17 +40,24 @@ public class PersonRescue : MonoBehaviour
 
         if (timer >= timeToHold)
         {
+            levelManager.IncreaseRescueCount();
+            rescueCount++;
             Debug.Log("Person Rescued");
             increaseTimer = false;
             timer = 1f;
             timerText.text = "";
-            personSource.Stop();
-            rescueCount++;
             if (rescueText != null)
             { rescueText.text = rescueCount.ToString() + "/2"; }
-            Destroy(this.gameObject);
-            
+            RescueAnimPart();
+
         }
+    }
+
+    private void RescueAnimPart()
+    {
+        //Edit code during anim here
+        personSource.Stop();
+        Destroy(this.gameObject);
     }
 
     public void TouchedHands()

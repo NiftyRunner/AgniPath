@@ -7,6 +7,7 @@ public class StoveMechanic : MonoBehaviour
     Animator stoveAnimator;
     AudioSource stoveAudio;
     [SerializeField] AudioSource parentStoveSource;
+    [SerializeField] LevelManager_Parth levelManager;
     
     void Start()
     {
@@ -16,6 +17,7 @@ public class StoveMechanic : MonoBehaviour
 
     public void TurnOffStove()
     {
+        levelManager.IncreaseStoveCount();
         stoveAnimator.SetTrigger("PlayerInteractedWithStove");
         if (parentStoveSource != null && parentStoveSource.volume == 1f)
         {
