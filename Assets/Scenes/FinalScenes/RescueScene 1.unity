@@ -5076,6 +5076,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3651164431241490783, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
+    - target: {fileID: 3651164431241490783, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5630507821665426790, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0007275792
@@ -34360,6 +34368,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Person (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3651164431241490783, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
+    - target: {fileID: 3651164431241490783, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8033571878953189774, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
+    - target: {fileID: 3651164431241490783, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5156596720104388625, guid: b2da0b636750aef49bbef80ee208e271, type: 3}
       propertyPath: MaxDistance
       value: 20
@@ -37885,6 +37905,18 @@ PrefabInstance:
     - target: {fileID: 7410100543227304216, guid: 439097c90269d0648bb3ad32c40030b0, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499366836119909389, guid: 439097c90269d0648bb3ad32c40030b0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
+    - target: {fileID: 8499366836119909389, guid: 439097c90269d0648bb3ad32c40030b0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8033571878953189774, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
+    - target: {fileID: 8499366836119909389, guid: 439097c90269d0648bb3ad32c40030b0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9134029253911634546, guid: 439097c90269d0648bb3ad32c40030b0, type: 3}
       propertyPath: Mute
@@ -43193,7 +43225,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8402734400074853137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 155620428}
+        m_TargetAssemblyTypeName: DestroyUICanvas, Assembly-CSharp
+        m_MethodName: DestroyCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!23 &7447924131764253360
 MeshRenderer:
   m_ObjectHideFlags: 0
