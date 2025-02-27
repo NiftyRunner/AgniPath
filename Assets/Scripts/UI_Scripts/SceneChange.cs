@@ -9,4 +9,10 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    void Start()
+    {
+        RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Skybox;
+        RenderSettings.ambientLight = Color.white;  // Ensures ambient light is applied
+        DynamicGI.UpdateEnvironment();  // Updates Global Illumination
+    }
 }
