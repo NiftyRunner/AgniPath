@@ -3,8 +3,8 @@ using TMPro;
 
 public class FireUIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject currentUICanvas; // Assign the current UI Canvas
-    [SerializeField] private GameObject newUICanvasPrefab; // Assign the new UI Canvas prefab
+    [SerializeField] private GameObject currentUICanvas; // Assign the current active UI Canvas
+    [SerializeField] private GameObject newUICanvas; // Assign the disabled UI Canvas (already in the Hierarchy)
     [SerializeField] private int requiredFireCount; // The count at which UI should change
     [SerializeField] private TextMeshProUGUI fireCountText; // Reference to the UI Text
 
@@ -18,21 +18,22 @@ public class FireUIManager : MonoBehaviour
 
     void SwitchUI()
     {
-        if (newUICanvasPrefab != null)
+        if (newUICanvas != null)
         {
-            // Spawn the new UI Canvas
-            GameObject newUICanvas = Instantiate(newUICanvasPrefab);
-            newUICanvas.SetActive(true);
-
-            // Destroy the current UI Canvas
-            if (currentUICanvas != null)
-            {
-                Destroy(currentUICanvas);
-            }
+            newUICanvas.SetActive(true); // Enable the new UI Canvas
         }
         else
         {
-            Debug.LogError("New UI Canvas Prefab is not assigned!");
+            Debug.LogError("New UI Canvas reference is not assigned!");
+        }
+
+        if (currentUICanvas != null)
+        {
+            Destroy(currentUICanvas); // Destroy the current UI Canvas
+        }
+        else
+        {
+            Debug.LogError("Current UI Canvas reference is not assigned!");
         }
     }
 }
