@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
+public class SceneChange : MonoBehaviour
 {
-    // Public method to load a scene by name
-    public void ChangeScene(string sceneName)
+    public string sceneName; // Assign this in the Inspector
+
+    public void ChangeScene()
     {
         SceneManager.LoadScene(sceneName);
     }

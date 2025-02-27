@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 2cc19d2e02d2a5b4e8d99f5e1e490568, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3930,6 +3930,8 @@ PlayableDirector:
     value: {fileID: 594411524}
   - key: {fileID: -8137605750438033640, guid: 92e4c58cfd754e44686aa5e7276bfacc, type: 2}
     value: {fileID: 1832553196}
+  - key: {fileID: -947108830952975345, guid: 92e4c58cfd754e44686aa5e7276bfacc, type: 2}
+    value: {fileID: 1710466874}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1640722676
@@ -4105,6 +4107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710466873}
   - component: {fileID: 1710466872}
+  - component: {fileID: 1710466874}
   m_Layer: 0
   m_Name: SceneChange
   m_TagString: Untagged
@@ -4124,6 +4127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9bbd2be09518b4a80d9ac47d8f64d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: RescueScene 1
 --- !u!4 &1710466873
 Transform:
   m_ObjectHideFlags: 0
@@ -4139,6 +4143,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710466874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710466871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 83a1df5465c905644bee3a391879bdd8, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1710466872}
+          m_TargetAssemblyTypeName: TimelineSceneLoader, Assembly-CSharp
+          m_MethodName: LoadSceneFromSignal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: RescueScene 1
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1710601498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2497721122568793917, guid: 84e7daadeecdfef44bd4f37a6b698c04, type: 3}
@@ -32233,6 +32267,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &912498987420205551
 Transform:
   m_ObjectHideFlags: 0
@@ -32317,6 +32352,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &938772646247216510
 GameObject:
   m_ObjectHideFlags: 0
@@ -60151,6 +60187,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &1947428269549544037
 Transform:
   m_ObjectHideFlags: 0
@@ -71941,6 +71978,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &2569182346130427019
 Transform:
   m_ObjectHideFlags: 0
@@ -76682,6 +76720,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &3773315512590779169
 Transform:
   m_ObjectHideFlags: 0
@@ -81529,6 +81568,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &3797341920003217614
 GameObject:
   m_ObjectHideFlags: 0
@@ -83154,6 +83194,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &4182026548438595786
 GameObject:
   m_ObjectHideFlags: 0
@@ -83696,6 +83737,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!23 &4418528229693744847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89592,6 +89634,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &4729059324084761293
 GameObject:
   m_ObjectHideFlags: 0
@@ -95849,6 +95892,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &5094602198246552718
 GameObject:
   m_ObjectHideFlags: 0
@@ -101693,6 +101737,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!114 &5378296948475189686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101710,6 +101755,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &5379479033613286230
 GameObject:
   m_ObjectHideFlags: 0
@@ -113851,6 +113897,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!33 &6105296386288699046
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -114046,6 +114093,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!33 &6133086705967538328
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -136771,6 +136819,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!33 &7152527439872462636
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -137333,6 +137382,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!33 &7277033685055622266
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -137382,6 +137432,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &7296204220160315796
 Transform:
   m_ObjectHideFlags: 0
@@ -137726,6 +137777,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &7366166679701336212
 Transform:
   m_ObjectHideFlags: 0
@@ -137889,6 +137941,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &7393800648009160747
 GameObject:
   m_ObjectHideFlags: 0
@@ -139575,6 +139628,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!195 &7910416060964749548
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -145914,6 +145968,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &8393611364184168456
 GameObject:
   m_ObjectHideFlags: 0
@@ -147420,6 +147475,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &8748940686111168730
 Transform:
   m_ObjectHideFlags: 0
@@ -153615,6 +153671,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 1, y: 1, z: 1}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!4 &9078839733479801248
 Transform:
   m_ObjectHideFlags: 0
@@ -153680,6 +153737,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 3959682914555983573, guid: 81d2568f25856f14f94f3e7f0a806710, type: 3}
   smokeScale: {x: 3, y: 3, z: 3}
   extinguishClip: {fileID: 8300000, guid: 2ed89293540bfb04cb4220256fdb9949, type: 3}
+  fireCollider: {fileID: 0}
 --- !u!1 &9132468292609242147
 GameObject:
   m_ObjectHideFlags: 0
