@@ -8542,7 +8542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1203704249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12049,6 +12049,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7965653725278312974, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
   m_PrefabInstance: {fileID: 7523636131007728840}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1927472391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7292200961089894244, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+  m_PrefabInstance: {fileID: 7523636131007728840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1927472395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3620998668682014903, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+  m_PrefabInstance: {fileID: 7523636131007728840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1971510974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42465,7 +42487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7321934451185214003
 Transform:
   m_ObjectHideFlags: 0
@@ -43219,10 +43241,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed_XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 700372836415020472, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 708303340537319202, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 708595014309253783, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_HitDetectionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 708595014309253783, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 708595014309253783, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465131608338787759, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_System
+      value: 
+      objectReference: {fileID: 1927472391}
     - target: {fileID: 1465131608338787759, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
       propertyPath: m_MoveSpeed
       value: 3
@@ -43231,14 +43273,38 @@ PrefabInstance:
       propertyPath: m_PhysicsLayerMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2136822836884090509, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_CurrentTrackingState
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529480089580644435, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_HitDetectionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529480089580644435, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529480089580644435, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4747498383736068405, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5206897976510604241, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
       propertyPath: m_PhysicsLayerMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5865355579921081796, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_System
+      value: 
+      objectReference: {fileID: 1927472391}
+    - target: {fileID: 7292200961089894244, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
+      propertyPath: m_XROrigin
+      value: 
+      objectReference: {fileID: 1927472395}
     - target: {fileID: 7965653725278312974, guid: 896e4964c43e41e44b43403b1fd44641, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -44354,7 +44420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7712547941840289180
 MonoBehaviour:
   m_ObjectHideFlags: 0
