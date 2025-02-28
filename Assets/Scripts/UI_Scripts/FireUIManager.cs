@@ -36,13 +36,13 @@ public class FireUIManager : MonoBehaviour
             Debug.LogError("New UI Canvas reference is not assigned!");
         }
 
-        if (currentUICanvas != null)
-        {
-            Destroy(currentUICanvas); // Destroy the current UI Canvas
-        }
-        else
-        {
-            Debug.LogError("Current UI Canvas reference is not assigned!");
-        }
+        //if (currentUICanvas != null)
+        //{
+        //    Destroy(currentUICanvas); // Destroy the current UI Canvas
+        //}
+        //else
+        //{
+        //    Debug.LogError("Current UI Canvas reference is not assigned!");
+        //}
     }
 }
