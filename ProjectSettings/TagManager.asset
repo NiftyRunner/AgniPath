@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Hands
   - HandTrigger
+  - Person
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Hallway
   - MCB
   - Drone
-  - 
+  - ACThing
   - 
   - 
   - 

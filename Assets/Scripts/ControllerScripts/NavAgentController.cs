@@ -8,7 +8,9 @@ public class NavAgentController : MonoBehaviour
 {
     [SerializeField] Transform positionToReach;
     [SerializeField] Canvas endCanvas;
+    [SerializeField] Canvas finalCanvas;
     [SerializeField] string sceneToLoad; // Assign scene name in Inspector
+    [SerializeField] LevelManager_Parth levelManager;
 
     Animator animator;
     NavMeshAgent agent;
@@ -17,10 +19,12 @@ public class NavAgentController : MonoBehaviour
     void Start()
     {
         reached = false;
+        finalCanvas.enabled = false;
 
         if (endCanvas != null)
         {
             endCanvas.gameObject.SetActive(false); // Ensure UI starts disabled
+            //endCanvasFPP.gameObject.SetActive(false);
         }
         else
         {
@@ -55,6 +59,9 @@ public class NavAgentController : MonoBehaviour
                     if (endCanvas != null)
                     {
                         endCanvas.gameObject.SetActive(true); // Enable UI
+                        levelManager.isLevelRunning = false;
+                        finalCanvas.enabled = true;
+                        //endCanvasFPP.gameObject.SetActive(true);
                         StartCoroutine(ChangeSceneAfterDelay(5f)); // Start scene change
                     }
                 }

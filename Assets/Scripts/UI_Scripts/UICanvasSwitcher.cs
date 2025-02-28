@@ -4,12 +4,14 @@ public class UICanvasSwitcher : MonoBehaviour
 {
     public GameObject firstCanvas;  // Assign the currently active canvas
     public GameObject secondCanvas; // Assign the disabled canvas in Inspector
+    //[SerializeField] LevelManager_Parth levelManager;
 
     void Update()
     {
-        if (ExtinguishFire.fireCount == 9) // Check if fireCount reaches 9
+        if (ExtinguishFire.fireCount == 16) // Check if fireCount reaches 16
         {
             SwitchCanvas();
+            //levelManager.isLevelRunning = false;
         }
     }
 

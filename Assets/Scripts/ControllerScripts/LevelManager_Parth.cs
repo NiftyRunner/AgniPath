@@ -67,13 +67,13 @@ public class LevelManager_Parth : MonoBehaviour
         if (!isLevelRunning && !gradeCalculated)
         {
             gradeCalculated = true;
-            grade = "F"; // Default grade
+            grade = "D"; // Default grade
 
             if (useTaskCompletion)
             {
                 if (mcbCount == 0 && stoveCount == 0 && rescueCount == 0)
                 {
-                    grade = "F"; // If no tasks were completed
+                    grade = "D"; // If no tasks were completed
                 }
                 else if (mcbCount >= 3 && stoveCount >= 2 && rescueCount >= 3)
                 {
@@ -104,12 +104,13 @@ public class LevelManager_Parth : MonoBehaviour
                 }
                 else
                 {
-                    grade = "F"; // No rescues = fail
+                    grade = "D"; // No rescues = fail
                 }
             }
             else
             {
-                if (timeRemaining <= 120) grade = "A";
+                if (timeRemaining <= 60) grade = "S";
+                else if (timeRemaining <= 120) grade = "A";
                 else if (timeRemaining <= 240) grade = "B";
                 else if (timeRemaining <= 360) grade = "C";
                 else grade = "D";
