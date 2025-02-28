@@ -69,7 +69,7 @@ public class NavAgentController : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeSceneAfterDelay(float delay)
+    IEnumerator ChangeSceneAfterDelay(float delay)  
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneToLoad); // Load assigned scene
