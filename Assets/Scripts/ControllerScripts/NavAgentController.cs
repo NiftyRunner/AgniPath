@@ -55,7 +55,7 @@ public class NavAgentController : MonoBehaviour
                     if (endCanvas != null)
                     {
                         endCanvas.gameObject.SetActive(true); // Enable UI
-                        StartCoroutine(ChangeSceneAfterDelay(10f)); // Start scene change
+                        StartCoroutine(ChangeSceneAfterDelay(5f)); // Start scene change
                     }
                 }
             }
