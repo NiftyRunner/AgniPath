@@ -5,9 +5,15 @@ using UnityEngine;
 public class BedAnimationTrigger : MonoBehaviour
 {
     [SerializeField] Animator crawlAnimator;
+    [SerializeField] PersonRescue personRescue;
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.tag == "HandTrigger")
+        {
+            personRescue.TouchedHands();
+        }
+
         if (crawlAnimator != null)
         {
             //Set crawl animation state here.
@@ -21,6 +27,11 @@ public class BedAnimationTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "HandTrigger")
+        {
+            personRescue.ReleasedHands();
+        }
+
         if (crawlAnimator != null)
         {
             //Pause from here.
