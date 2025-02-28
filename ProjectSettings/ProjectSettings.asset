@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: VRForge
   productName: AgniPath
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -140,7 +140,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -5704836777053081730, guid: b07d04a15bc129843ba05efef684b0dc, type: 2}
+  - {fileID: 11400000, guid: d7eed5369543acf4a871fbf7cf694d54, type: 2}
+  - {fileID: -1501099922709643346, guid: dbf9cc9eac3948c49b99d155a0adee08, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

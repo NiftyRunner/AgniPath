@@ -2418,7 +2418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &337073668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7238,7 +7238,12 @@ MonoBehaviour:
 
     1. Turn off the gas
 
-    2. Turn off the MCB'
+    2. Turn off the MCB
+
+    3. Lift The
+    Bed To Rescue
+
+    4. Open The Window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
   m_sharedMaterial: {fileID: 8033571878953189774, guid: 48398c8f637e4594595d7b778fe1fccb, type: 2}
@@ -7265,14 +7270,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.18
-  m_fontSizeBase: 0.18
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7477,7 +7482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1028870638
 MonoBehaviour:
   m_ObjectHideFlags: 0
