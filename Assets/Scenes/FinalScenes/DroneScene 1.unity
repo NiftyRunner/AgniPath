@@ -1581,6 +1581,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1588,6 +1592,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2397,6 +2405,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2404,6 +2416,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3124,6 +3140,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -3131,6 +3151,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3468,6 +3492,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -3475,6 +3503,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3891,6 +3923,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -3898,6 +3934,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4251,6 +4291,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4258,6 +4302,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4689,6 +4737,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4696,6 +4748,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4912,8 +4968,32 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 496421019365135785, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6046615
+      objectReference: {fileID: 0}
+    - target: {fileID: 496421019365135785, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6895348
+      objectReference: {fileID: 0}
+    - target: {fileID: 496421019365135785, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.z
+      value: 0.84027874
+      objectReference: {fileID: 0}
+    - target: {fileID: 496421019365135785, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Center.x
+      value: -5.565623
+      objectReference: {fileID: 0}
+    - target: {fileID: 496421019365135785, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Center.y
+      value: 0.2993545
+      objectReference: {fileID: 0}
     - target: {fileID: 571596632725064454, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 599715571273904022, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 763185459788680130, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
@@ -4947,6 +5027,14 @@ PrefabInstance:
     - target: {fileID: 1127938630050277625, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582980947324861371, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585963727123422475, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1607548526297277894, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_IsActive
@@ -5020,6 +5108,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2647539413157410458, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6046615
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647539413157410458, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6492946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647539413157410458, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Size.z
+      value: 0.84027874
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647539413157410458, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Center.x
+      value: -5.565623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647539413157410458, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_Center.y
+      value: 0.2792344
+      objectReference: {fileID: 0}
     - target: {fileID: 2691381633911429029, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5046,6 +5154,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2730473291343422567, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059694156383090631, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100526408165285238, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
@@ -5080,6 +5192,14 @@ PrefabInstance:
       propertyPath: fireCountText
       value: 
       objectReference: {fileID: 1751722082504591545}
+    - target: {fileID: 3797341919463398655, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038282725966508633, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4062591414036624352, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: Mute
       value: 0
@@ -5148,6 +5268,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4563158321828547357, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696345462377785681, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4729059324624582396, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5159,6 +5287,10 @@ PrefabInstance:
     - target: {fileID: 5014645330900779387, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_Name
       value: Mainbuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015388838463752116, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 524279
       objectReference: {fileID: 0}
     - target: {fileID: 5094343237422994612, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: fireCountText
@@ -5184,6 +5316,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5284651470394882741, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: endCanvas
+      value: 
+      objectReference: {fileID: 1678719057}
     - target: {fileID: 5378296949009243527, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: fireCountText
       value: 
@@ -5248,9 +5384,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6930586741185804968, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7030057772068642108, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108073866307771564, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7274075198261755394, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: fireCountText
@@ -5276,6 +5420,10 @@ PrefabInstance:
       propertyPath: fireCountText
       value: 
       objectReference: {fileID: 1751722082504591545}
+    - target: {fileID: 8200446374266316337, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8658471034050436718, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
       propertyPath: Mute
       value: 0
@@ -5335,31 +5483,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 896291110193012262, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1929998229}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
---- !u!1 &1929998228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 896291110193012262, guid: 8066d32ea452dd1449ad9b8aa2691b80, type: 3}
-  m_PrefabInstance: {fileID: 1929998227}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1929998229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929998228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63da4f4440f7ab14bbb3663ed8e31f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 284687506}
-  sceneToLoad: MainMenu
-  uiDisplayTime: 10
 --- !u!1 &1989663466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5991,6 +6116,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -5998,6 +6127,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7553,6 +7686,10 @@ PrefabInstance:
       propertyPath: totalFireCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6688462755347752075, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590730465295374871, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -7560,6 +7697,10 @@ PrefabInstance:
     - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
       propertyPath: m_Name
       value: Bonfire (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453968073588674232, guid: 5cc525752dc6cfd44b30274305ff5177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
